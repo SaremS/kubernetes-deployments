@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: caddyfile 
+data:
+  Caddyfile: |
+    :80
+
+    root * /quarto/blog/docs
+    file_server
