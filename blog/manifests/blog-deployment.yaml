@@ -55,7 +55,9 @@ spec:
             name: caddyfile
             subPath: Caddyfile
           securityContext:
-            runAsUser: 1000                        
+            runAsUser: 1000
+            runAsGroup: 1000                      
+            readOnlyRootFilesystem: true
       volumes:
       - name: quarto-static
         emptyDir: {}  
