@@ -11,7 +11,7 @@ spec:
     targetRevision: master
     directory:
       recurse: false 
-      include: '^(?!.*argocd-app).*\.yaml$'
+      include: '^((?!argocd-app).)*.\.yaml$'
   destination:
     server: https://kubernetes.default.svc  
     namespace: blog                     
