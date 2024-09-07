@@ -7,32 +7,12 @@ spec:
   project: default
   source:
     repoURL: 'https://charts.longhorn.io'
-    targetRevision: 1.7.1
-    helm:
-      releaseName: longhorn
-      values: |
-        fullnameOverride: longhorn
-        defaultSettings:
-          taintToleration: "home=true:NoSchedule"
-          priorityClass: system-node-critical
-        longhornManager:
-          tolerations:
-              - effect: NoSchedule
-                key: home
-                operator: Exists
-        longhornDriver:
-          tolerations:
-              - effect: NoSchedule
-                key: home
-                operator: Exists
-        longhornUI:
-          tolerations:
-              - effect: NoSchedule
-                key: home
-                operator: Exists
-        persistence:
-          reclaimPolicy: Retain
+    targetRevision: v1.7.1
     chart: longhorn
+    helm:
+      values: |
+        preUpgradeChecker:
+          jobEnabled: false
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: longhorn-system
