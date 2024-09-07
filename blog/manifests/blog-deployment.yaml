@@ -42,7 +42,6 @@ spec:
             - name: quarto-static
               mountPath: /quarto
               readOnly: false
-              allowPrivilegeEscalation: false        
       containers:
         - name: caddy
           image: caddy:2.8.4-alpine
@@ -59,6 +58,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000                      
             readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false        
       volumes:
       - name: quarto-static
         emptyDir: {}  
