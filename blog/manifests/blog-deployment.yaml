@@ -12,6 +12,9 @@ spec:
       labels:
         app: quarto-deployment
     spec:
+      securityContext:
+        runAsUser: 0
+        fsGroup: 0
       initContainers:
         - name: git-sync-init
           image: registry.k8s.io/git-sync/git-sync:v4.2.4
@@ -32,9 +35,6 @@ spec:
               value: "true"
             - name: "GITSYNC_GROUP_WRITE"
               value: "true"
-          securityContext:
-            runAsUser: 0
-            fsGroup: 0
         - name: quarto-init
           image: registry.gitlab.com/quarto-forge/docker/quarto 
           command: ['sh', '-c', 'sleep 5; while [ ! -f /quarto/blog/_quarto.yml ]; do echo "Waiting for git-sync-init to finish..." && sleep 5; done; quarto render /quarto/blog']
@@ -42,9 +42,6 @@ spec:
             - name: quarto-static
               mountPath: /quarto
               readOnly: false
-          securityContext:
-            runAsUser: 0
-            fsGroup: 0
       containers:
         - name: caddy
           image: caddy:2.8.4-alpine
@@ -60,7 +57,6 @@ spec:
           securityContext:
             runAsUser: 1000                        
             runAsGroup: 1000                      
-            fsGroup: 1000                          
             readOnlyRootFilesystem: true           
             allowPrivilegeEscalation: false        
             capabilities:
