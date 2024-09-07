@@ -42,6 +42,7 @@ spec:
             - name: quarto-static
               mountPath: /quarto
               readOnly: false
+              allowPrivilegeEscalation: false        
       containers:
         - name: caddy
           image: caddy:2.8.4-alpine
