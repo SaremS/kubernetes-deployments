@@ -10,10 +10,11 @@ spec:
       chart: metallb             
       targetRevision: 0.14.8
     - repoURL: https://github.com/SaremS/kubernetes-deployments
-      path: cluster/metallb-ip-pool.yaml
+      path: cluster
       targetRevision: master
       directory:
         recurse: false 
+        include: 'metallb-ip-pool.yaml'
   destination:
     server: https://kubernetes.default.svc  
     namespace: metallb                     
