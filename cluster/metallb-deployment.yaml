@@ -15,4 +15,4 @@ spec:
     server: https://kubernetes.default.svc  
     namespace: metallb                     
   syncPolicy:
-    automated: false
+    automated: {}
