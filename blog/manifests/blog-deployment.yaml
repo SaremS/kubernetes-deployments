@@ -56,14 +56,6 @@ spec:
             subPath: Caddyfile
           securityContext:
             runAsUser: 1000                        
-            runAsGroup: 1000                      
-            readOnlyRootFilesystem: true           
-            allowPrivilegeEscalation: false        
-            capabilities:
-              drop:
-                - ALL                              
-            seccompProfile:
-              type: RuntimeDefault 
       volumes:
       - name: quarto-static
         emptyDir: {}  
