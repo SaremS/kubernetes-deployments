@@ -6,11 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/metallb/metallb
+    repoURL: https://metallb.github.io/metallb
     path: charts/metallb             
-    targetRevision: v0.14.8
-    directory:
-      recurse: true
+    targetRevision: 0.14.8
   destination:
     server: https://kubernetes.default.svc  
     namespace: metallb                     
