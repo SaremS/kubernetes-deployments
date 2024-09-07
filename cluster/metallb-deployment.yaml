@@ -6,9 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://metallb.github.io/metallb
-    chart: metallb             
-    targetRevision: 0.14.8
+    - repoURL: https://metallb.github.io/metallb
+      chart: metallb             
+      targetRevision: 0.14.8
+    - repoURL: https://github.com/SaremS/kubernetes-deployments
+      path: cluster/metallb-ip-pool.yaml
+      targetRevision: master
+      directory:
+        recurse: false 
   destination:
     server: https://kubernetes.default.svc  
     namespace: metallb                     
