@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarto-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarto-deployment
+  template:
+    metadata:
+      labels:
+        app: quarto-deployment
+    spec:
+      initContainers:
+        - name: git-sync-init
+          image: registry.k8s.io/git-sync/git-sync:v4.2.4
+          volumeMounts:
+            - name: quarto-static
+              mountPath: /quarto
+              readOnly: false
+          env:
+            - name: GITSYNC_REPO
+              value: "https://github.com/SaremS/blog" 
+            - name: GITSYNC_BRANCH
+              value: "master" 
+            - name: GITSYNC_ROOT
+              value: /quarto
+            - name: GITSYNC_PERIOD
+              value: "5s"
+            - name: GITSYNC_ONE_TIME
+              value: "true"
+            - name: "GITSYNC_GROUP_WRITE"
+              value: "true"
+          securityContext:
+            runAsUser: 0
+            fsGroup: 0
+        - name: quarto-init
+          image: registry.gitlab.com/quarto-forge/docker/quarto 
+          command: ['sh', '-c', 'sleep 5; while [ ! -f /quarto/blog/_quarto.yml ]; do echo "Waiting for git-sync-init to finish..." && sleep 5; done; quarto render /quarto/blog']
+          volumeMounts:
+            - name: quarto-static
+              mountPath: /quarto
+              readOnly: false
+          securityContext:
+            runAsUser: 0
+            fsGroup: 0
+      containers:
+        - name: caddy
+          image: caddy:2.8.4-alpine
+          ports:
+          - containerPort: 80
+          volumeMounts:
+          - mountPath: /quarto
+            name: quarto-static
+            readOnly: true
+          - mountPath: /etc/caddy/Caddyfile
+            name: caddyfile
+            subPath: Caddyfile
+          securityContext:
+            runAsUser: 1000                        
+            runAsGroup: 1000                      
+            fsGroup: 1000                          
+            readOnlyRootFilesystem: true           
+            allowPrivilegeEscalation: false        
+            capabilities:
+              drop:
+                - ALL                              
+            seccompProfile:
+              type: RuntimeDefault 
+      volumes:
+      - name: quarto-static
+        emptyDir: {}  
+      - name: caddyfile
+        configMap:
+          name: caddyfile
