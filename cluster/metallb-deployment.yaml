@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metallb
-  namespace: metallb
+  namespace: argocd
 spec:
   project: default
   source:
@@ -13,6 +13,6 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc  
-    namespace: default                     
+    namespace: metallb                     
   syncPolicy:
     automated: false
