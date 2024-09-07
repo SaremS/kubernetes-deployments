@@ -7,11 +7,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/SaremS/kubernetes-deployments
-    path: blog
+    path: blog/manifests
     targetRevision: master
     directory:
       recurse: false 
-      include: '^((?!argocd-app).)*.\.yaml$'
   destination:
     server: https://kubernetes.default.svc  
     namespace: blog                     
