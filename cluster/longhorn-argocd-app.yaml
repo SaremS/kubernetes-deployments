@@ -13,6 +13,9 @@ spec:
       values: |
         preUpgradeChecker:
           jobEnabled: false
+        longhornManager:
+          nodeSelector:
+            deploy-longhorn-manager: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: longhorn-system
