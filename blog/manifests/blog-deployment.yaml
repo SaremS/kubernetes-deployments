@@ -87,7 +87,7 @@ spec:
                            "apiVersion": "batch/v1",
                            "kind": "Job",
                            "metadata": {
-                             "name": "quarto-render-job-$GITSYNC_HASH"
+                             "name": "quarto-render-job-$(echo $GITSYNC_HASH)"
                            },
                            "spec": {
                              "ttlSecondsAfterFinished": 900,
