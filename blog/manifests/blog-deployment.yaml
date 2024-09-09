@@ -84,6 +84,35 @@ spec:
               value: "blog"
             - name: CACERT
               value: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+            - name: GITSYNC_EXECHOOK_COMMAND
+              value: |
+                curl -X POST $KUBE_API/apis/batch/v1/namespaces/$NAMESPACE/jobs \
+                  --header "Authorization: Bearer $TOKEN" \
+                  --header "Content-Type: application/json" \
+                  --cacert $CACERT \
+                  --data "EOF
+                           {
+                           "apiVersion": "batch/v1",
+                           "kind": "Job",
+                           "metadata": {
+                             "name": "triggered-job"
+                           },
+                           "spec": {
+                             "template": {
+                               "spec": {
+                                 "containers": [
+                                   {
+                                     "name": "busybox",
+                                     "image": "busybox",
+                                     "command": ["echo", "Hello from triggered job!"]
+                                   }
+                                 ],
+                                 "restartPolicy": "Never"
+                               }
+                             }
+                           }
+                         }
+                         EOF"
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
