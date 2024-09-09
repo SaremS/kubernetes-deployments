@@ -90,6 +90,7 @@ spec:
                              "name": "quarto-render-job-$GITSYNC_HASH"
                            },
                            "spec": {
+                             "ttlSecondsAfterFinished": 900
                              "template": {
                                "spec": {
                                  "securityContext": {
@@ -108,7 +109,7 @@ spec:
                                    {
                                     "name": "quarto", 
                                     "persistentVolumeClaim": {
-                                      "claimName": "blog-pvc"
+                                      "claimName": "quarto-blog-pvc"
                                     }
                                    }
                                  ],
@@ -120,7 +121,7 @@ spec:
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
-          claimName: blog-pvc
+          claimName: quarto-blog-pvc
       - name: caddyfile
         configMap:
           name: caddyfile
