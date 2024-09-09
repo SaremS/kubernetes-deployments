@@ -60,6 +60,23 @@ spec:
             runAsGroup: 1000                      
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false        
+        - name: git-sync-sidecar
+          image: registry.k8s.io/git-sync/git-sync:v4.2.4
+          volumeMounts:
+            - name: quarto-static
+              mountPath: /quarto
+              readOnly: false
+          env:
+            - name: GITSYNC_REPO
+              value: "https://github.com/SaremS/blog" 
+            - name: GITSYNC_BRANCH
+              value: "master" 
+            - name: GITSYNC_ROOT
+              value: /quarto
+            - name: GITSYNC_PERIOD
+              value: "5s"
+            - name: "GITSYNC_GROUP_WRITE"
+              value: "true"
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
