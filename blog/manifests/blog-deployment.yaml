@@ -83,41 +83,41 @@ spec:
                   --header "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
                   --header "Content-Type: application/json" \
                   --cacert "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt" \
-                  --data '{
-                           "apiVersion": "batch/v1",
-                           "kind": "Job",
-                           "metadata": {
-                             "name": "quarto-render-job-$(echo $GITSYNC_HASH)"
+                  --data "{
+                           \"apiVersion\": \"batch/v1\",
+                           \"kind\": \"Job\",
+                           \"metadata\": {
+                             \"name\": \"quarto-render-job-$GITSYNC_HASH\"
                            },
-                           "spec": {
-                             "ttlSecondsAfterFinished": 900,
-                             "template": {
-                               "spec": {
-                                 "securityContext": {
-                                   "runAsUser": 0,
-                                   "fsGroup": 0
+                           \"spec\": {
+                             \"ttlSecondsAfterFinished\": 900,
+                             \"template\": {
+                               \"spec\": {
+                                 \"securityContext\": {
+                                   \"runAsUser\": 0,
+                                   \"fsGroup\": 0
                                  },
-                                 "containers": [
+                                 \"containers\": [
                                    {
-                                     "name": "quarto-render",
-                                     "image": "registry.gitlab.com/quarto-forge/docker/quarto",
-                                     "command": ["sh", "-c", "quarto render /quarto/blog"],
-                                     "volumeMounts": [{"name": "quarto", "mountPath": "/quarto"}]
+                                     \"name\": \"quarto-render\",
+                                     \"image\": \"registry.gitlab.com/quarto-forge/docker/quarto\",
+                                     \"command\": [\"sh\", \"-c\", \"quarto render /quarto/blog\"],
+                                     \"volumeMounts\": [{\"name\": \"quarto\", \"mountPath\": \"/quarto\"}]
                                    }
                                  ],
-                                 "volumes": [
+                                 \"volumes\": [
                                    {
-                                    "name": "quarto", 
-                                    "persistentVolumeClaim": {
-                                      "claimName": "blog-pvc"
+                                    \"name\": \"quarto\", 
+                                    \"persistentVolumeClaim\": {
+                                      \"claimName\": \"blog-pvc\"
                                     }
                                    }
                                  ],
-                                 "restartPolicy": "Never"
+                                 \"restartPolicy\": \"Never\"
                                }
                              }
                            }
-                         }'
+                         }"
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
