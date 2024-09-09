@@ -90,7 +90,7 @@ spec:
                              "name": "quarto-render-job-$GITSYNC_HASH"
                            },
                            "spec": {
-                             "ttlSecondsAfterFinished": 900
+                             "ttlSecondsAfterFinished": 900,
                              "template": {
                                "spec": {
                                  "securityContext": {
