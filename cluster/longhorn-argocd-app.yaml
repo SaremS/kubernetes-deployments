@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: longhorn
+  name: longhorn-deployment
   namespace: argocd
 spec:
   project: default
@@ -18,7 +18,7 @@ spec:
             longhorn-manager: yes
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: longhorn-system
+    namespace: longhorn
   syncPolicy:
     automated:
       selfHeal: true
