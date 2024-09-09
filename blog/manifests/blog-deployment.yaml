@@ -78,18 +78,12 @@ spec:
               value: "5s"
             - name: GITSYNC_GROUP_WRITE
               value: "true"
-            - name: KUBE_API
-              value: "https://kubernetes.default.svc"
-            - name: NAMESPACE
-              value: "blog"
-            - name: CACERT
-              value: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
             - name: GITSYNC_EXECHOOK_COMMAND
               value: |
-                curl -X POST $KUBE_API/apis/batch/v1/namespaces/$NAMESPACE/jobs \
-                  --header "Authorization: Bearer $TOKEN" \
+                curl -X POST https://kubernetes.default.svc/apis/batch/v1/namespaces/blog/jobs \
+                  --header "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
                   --header "Content-Type: application/json" \
-                  --cacert $CACERT \
+                  --cacert "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt" \
                   --data "EOF
                            {
                            "apiVersion": "batch/v1",
