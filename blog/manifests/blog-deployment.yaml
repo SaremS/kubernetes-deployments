@@ -84,29 +84,35 @@ spec:
                   --header "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
                   --header "Content-Type: application/json" \
                   --cacert "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt" \
-                  --data "EOF
-                           {
+                  --data '{
                            "apiVersion": "batch/v1",
                            "kind": "Job",
                            "metadata": {
-                             "name": "triggered-job"
+                             "name": "quarto-render-job"
                            },
                            "spec": {
                              "template": {
                                "spec": {
                                  "containers": [
                                    {
-                                     "name": "busybox",
-                                     "image": "busybox",
-                                     "command": ["echo", "Hello from triggered job!"]
+                                     "name": "quarto-render",
+                                     "image": "registry.gitlab.com/quarto-forge/docker/quarto",
+                                     "command": ["sh", "-c", "quarto render /quarto/blog"],
+                                     "volumeMounts": [{"name": "quarto", "mountPath": "/quarto"}]
+                                   }
+                                 ],
+                                 "volumes": [
+                                   {"name": "quarto", 
+                                    "persistentVolumeClaim": {
+                                      "claimName": "blog-pvc"
+                                    }
                                    }
                                  ],
                                  "restartPolicy": "Never"
                                }
                              }
                            }
-                         }
-                         EOF"
+                         }'
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
