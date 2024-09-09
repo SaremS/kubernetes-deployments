@@ -74,7 +74,7 @@ spec:
             - name: GITSYNC_ROOT
               value: "/quarto"
             - name: GITSYNC_PERIOD
-              value: "5s"
+              value: "30s"
             - name: GITSYNC_GROUP_WRITE
               value: "true"
             - name: GITSYNC_EXECHOOK_COMMAND
@@ -109,7 +109,7 @@ spec:
                                    {
                                     "name": "quarto", 
                                     "persistentVolumeClaim": {
-                                      "claimName": "quarto-blog-pvc"
+                                      "claimName": "blog-pvc"
                                     }
                                    }
                                  ],
@@ -121,7 +121,7 @@ spec:
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
-          claimName: quarto-blog-pvc
+          claimName: blog-pvc
       - name: caddyfile
         configMap:
           name: caddyfile
