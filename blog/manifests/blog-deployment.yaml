@@ -76,44 +76,14 @@ spec:
               value: /quarto
             - name: GITSYNC_PERIOD
               value: "5s"
-            - name: "GITSYNC_GROUP_WRITE"
+            - name: GITSYNC_GROUP_WRITE
               value: "true"
-            - name: "QUARTO_RENDER_JOB_PAYLOAD"
-              value: |
-								{
-									\"apiVersion\": \"batch/v1\",
-									\"kind\": \"Job\",
-									\"metadata\": {
-										\"name\": \"triggered-job\"
-									},
-									\"spec\": {
-										\"template\": {
-											\"spec\": {
-												\"containers\": [
-													{
-														\"name\": \"busybox\",
-														\"image\": \"busybox\",
-														\"command\": [\"echo\", \"Hello from triggered job!\"]
-													}
-												],
-												\"restartPolicy\": \"Never\"
-											}
-										}
-									}
-								}
-						- name: "KUBE_API"
-							value: "https://kubernetes.default.svc"
-						- name: "NAMESPACE"
-							value: "blog"
-						- name: "CACERT"
-							value: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
-            - name: "GITSYNC_EXECHOOK_COMMAND"
-              value: |
-								curl -X POST $KUBE_API/apis/batch/v1/namespaces/$NAMESPACE/jobs \
-  								--header "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
-  								--header "Content-Type: application/json" \
-  								--cacert $CACERT \
-  								--data "$QUARTO_RENDER_JOB_PAYLOAD"
+            - name: KUBE_API
+              value: "https://kubernetes.default.svc"
+            - name: NAMESPACE
+              value: "blog"
+            - name: CACERT
+              value: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
