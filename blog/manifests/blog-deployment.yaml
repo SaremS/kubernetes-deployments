@@ -62,7 +62,8 @@ spec:
             allowPrivilegeEscalation: false        
       volumes:
       - name: quarto-static
-        emptyDir: {}  
+        persistentVolumeClaim:
+          claimName: blog-pvc
       - name: caddyfile
         configMap:
           name: caddyfile
