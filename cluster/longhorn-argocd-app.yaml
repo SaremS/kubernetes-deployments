@@ -15,7 +15,7 @@ spec:
           jobEnabled: false
         longhornManager:
           nodeSelector:
-            deploy-longhorn-manager: yes
+            longhorn-manager: yes
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: longhorn-system
