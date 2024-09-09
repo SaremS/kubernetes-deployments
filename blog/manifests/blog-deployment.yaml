@@ -73,7 +73,7 @@ spec:
             - name: GITSYNC_BRANCH
               value: "master" 
             - name: GITSYNC_ROOT
-              value: /quarto
+              value: "/quarto"
             - name: GITSYNC_PERIOD
               value: "5s"
             - name: GITSYNC_GROUP_WRITE
