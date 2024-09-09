@@ -81,9 +81,9 @@ spec:
 	    - name: KUBE_API
 	      value: "https://kubernetes.default.svc"
 	    - name: NAMESPACE
-		value: blog
+	      value: blog
 	    - name: CACERT
-		value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+	      value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
             - name: GITSYNC_EXECHOOK_COMMAND
               value: |
 		curl -X POST $KUBE_API/apis/batch/v1/namespaces/$NAMESPACE/jobs \
