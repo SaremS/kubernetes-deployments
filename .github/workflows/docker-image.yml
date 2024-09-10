@@ -15,11 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Build and Publish latest Docker image
-      uses: VaultVulp/gp-docker-action@1.5.0
-      with:
-        github-token: ${{ secrets.PUSH_IMAGE_KEY }}     
-        image-name: ${{ github.event.inputs.build-target-folder }}
-        image-tag: ${{ github.event.inputs.build-tag }}
-        extract-git-tag: false
-        build-context: tools/${{ github.event.inputs.build-target-folder }}
+    - name: Build the Docker image
+      run: docker build ghcr.io/sarems/kubernetes-deployments/${{ github.event.inputs.build-target-folder }} -t ${{ github.event.inputs.build-tag }}
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+    - name: Push Docker Image
+      run: docker push ghcr.io/sarems/kubernetes-deployments/${{ github.event.inputs.build-target-folder }}:${{ github.event.inputs.build-tag }}
