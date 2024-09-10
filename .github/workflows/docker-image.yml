@@ -19,7 +19,8 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.5.0
       with:
         github-token: ${{ secrets.PUSH_IMAGE_KEY }}     
-        image-name: ${{ github.event.inputs.build-target-folder }}:${{ github.event.inputs.build-tag}} 
+        image-name: ${{ github.event.inputs.build-target-folder }}
+        image-tag: ${{ github.event.inputs.build-tag }}
         extract-git-tag: false
         build-context: tools/${{ github.event.inputs.build-target-folder }}
         dockerfile: ./Dockerfile  
