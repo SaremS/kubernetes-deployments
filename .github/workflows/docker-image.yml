@@ -23,4 +23,3 @@ jobs:
         image-tag: ${{ github.event.inputs.build-tag }}
         extract-git-tag: false
         build-context: tools/${{ github.event.inputs.build-target-folder }}
-        dockerfile: ./Dockerfile  
