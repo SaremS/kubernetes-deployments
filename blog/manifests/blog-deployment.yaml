@@ -79,11 +79,7 @@ spec:
               value: "true"
             - name: GITSYNC_EXECHOOK_COMMAND
               value: |
-                curl -X POST https://kubernetes.default.svc/apis/batch/v1/namespaces/blog/jobs \
-                  --header "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
-                  --header "Content-Type: application/json" \
-                  --cacert "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt" \
-                  --data "{
+                curl -X POST https://kubernetes.default.svc/apis/batch/v1/namespaces/blog/jobs --header "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" --header "Content-Type: application/json" --cacert "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt" --data "{
                            \"apiVersion\": \"batch/v1\",
                            \"kind\": \"Job\",
                            \"metadata\": {
