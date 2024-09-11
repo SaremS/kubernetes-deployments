@@ -61,7 +61,7 @@ spec:
             runAsGroup: 1000                      
             allowPrivilegeEscalation: false        
         - name: git-sync-sidecar
-          image: registry.k8s.io/git-sync/git-sync:v4.2.4
+          image: ghcr.io/sarems/kubernetes-deployments/git-sync-quarto-render:v0.0.1
           volumeMounts:
             - name: quarto-static
               mountPath: /quarto
