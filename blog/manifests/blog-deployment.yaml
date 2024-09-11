@@ -48,7 +48,7 @@ spec:
             - name: GITSYNC_ROOT
               value: "/quarto"
             - name: GITSYNC_PERIOD
-              value: "20s"
+              value: "10s"
             - name: GITSYNC_GROUP_WRITE
               value: "true"
             - name: GITSYNC_EXECHOOK_COMMAND
