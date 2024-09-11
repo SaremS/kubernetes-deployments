@@ -62,9 +62,7 @@ spec:
           - mountPath: /etc/caddy/Caddyfile
             name: caddyfile
             subPath: Caddyfile
-          securityContext:
-            runAsUser: 1000
-            runAsGroup: 1000                      
+          securityContext:                  
             allowPrivilegeEscalation: false        
         - name: git-sync-sidecar
           image: ghcr.io/sarems/kubernetes-deployments/git-sync-quarto-render:v0.0.1
