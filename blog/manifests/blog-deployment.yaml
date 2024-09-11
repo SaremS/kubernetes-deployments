@@ -56,6 +56,9 @@ spec:
           - mountPath: /quarto
             name: quarto-static
             readOnly: true
+          - mountPath: /data
+            name: caddy-data
+            readOnly: true
           - mountPath: /etc/caddy/Caddyfile
             name: caddyfile
             subPath: Caddyfile
@@ -86,6 +89,9 @@ spec:
       - name: quarto-static
         persistentVolumeClaim:
           claimName: blog-pvc
+      - name: caddy-data
+        persistentVolumeClaim:
+          claimName: caddy-pvc
       - name: caddyfile
         configMap:
           name: caddyfile
