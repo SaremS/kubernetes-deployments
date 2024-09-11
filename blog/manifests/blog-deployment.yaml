@@ -49,6 +49,9 @@ spec:
           image: caddy:2.8.4-alpine
           ports:
           - containerPort: 80
+            name: http-port
+          - containerPort: 443
+            name: https-port
           volumeMounts:
           - mountPath: /quarto
             name: quarto-static
