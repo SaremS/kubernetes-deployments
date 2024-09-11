@@ -78,7 +78,7 @@ spec:
             - name: GITSYNC_GROUP_WRITE
               value: "true"
             - name: GITSYNC_EXECHOOK_COMMAND
-              value: "/git-sync/quarto-render-job"
+              value: "/quarto-render-job"
       volumes:
       - name: quarto-static
         persistentVolumeClaim:
