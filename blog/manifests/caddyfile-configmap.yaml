@@ -4,16 +4,16 @@ metadata:
   name: caddyfile 
 data:
   Caddyfile: |
-    :80
-
-    root * /quarto/blog/docs
-    file_server
-
     www.sarem-seitz.com {
     	redir https://sarem-seitz.com{uri} permanent
     }
 
     sarem-seitz.com {
+      :80
+
+      root * /quarto/blog/docs
+      file_server
+
       redir /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
       redir /varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
       redir /varying-coefficient-boosting-for-geospatial-and-temporal-data.html /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
