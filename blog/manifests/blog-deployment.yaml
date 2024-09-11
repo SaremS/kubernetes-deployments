@@ -56,9 +56,9 @@ spec:
           - mountPath: /quarto
             name: quarto-static
             readOnly: true
-          - mountPath: /data
+          - mountPath: /data/caddy
             name: caddy-data
-            readOnly: true
+            readOnly: false
           - mountPath: /etc/caddy/Caddyfile
             name: caddyfile
             subPath: Caddyfile
