@@ -37,7 +37,6 @@ spec:
         - name: git-sync-sidecar
           securityContext:
             runAsUser: 0
-            fsGroup: 0
           image: ghcr.io/sarems/kubernetes-deployments/git-sync-quarto-render:v0.0.1
           volumeMounts:
             - name: quarto-static
