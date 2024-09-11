@@ -14,7 +14,7 @@ data:
     }
 
     sarem-seitz.com {
-	    redir /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
+      redir /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
       redir /varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
       redir /varying-coefficient-boosting-for-geospatial-and-temporal-data.html /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
 
