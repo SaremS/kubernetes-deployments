@@ -49,7 +49,7 @@ func main() {
 							Name:  "quarto-render",
 							Image: "registry.gitlab.com/quarto-forge/docker/quarto",
 							Command: []string{
-								"sh", "-c", "quarto render /quarto/blog && cp -rf /quarto/blog/docs /quarto/output",
+								"sh", "-c", "rm -r /quarto/blog/docs && quarto render /quarto/blog && cp -rf /quarto/blog/docs /quarto/output",
 							},
 							VolumeMounts: []v1core.VolumeMount{
 								{
