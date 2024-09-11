@@ -9,8 +9,6 @@ data:
     }
 
     sarem-seitz.com {
-      :80
-
       root * /quarto/blog/docs
       file_server
 
