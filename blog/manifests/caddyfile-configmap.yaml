@@ -9,7 +9,7 @@ data:
     }
 
     sarem-seitz.com {
-      root * /quarto/blog/docs
+      root * /quarto/output
       file_server
 
       redir /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
