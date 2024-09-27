@@ -1,0 +1,9 @@
+apiVersion: v2
+name: quarto-blog
+description: Deploy a quarto blog from Github, including auto-sync.
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"

@@ -12,81 +12,100 @@ data:
       root * /quarto/output
       file_server
 
-      redir /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
-      redir /varying-coefficient-boosting-for-geospatial-and-temporal-data/ /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
-      redir /varying-coefficient-boosting-for-geospatial-and-temporal-data.html /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html
+      redir /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data* /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html permanent
+      redir /blog/varying-coefficient-boosting-for-geospatial-and-temporal-data* /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html permanent
+      redir /varying-coefficient-boosting-for-geospatial-and-temporal-data* /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html permanent
+      redir /varying-coefficient-boosting-for-geospatial-and-temporal-data.html /posts/varying-coefficient-boosting-for-geospatial-and-temporal-data.html permanent
 
-      redir /posts/with-pytorch-i-can-gradient-boost-anything/ /posts/with-pytorch-i-can-gradient-boost-anything.html
-      redir /with-pytorch-i-can-gradient-boost-anything/ /posts/with-pytorch-i-can-gradient-boost-anything.html
-      redir /with-pytorch-i-can-gradient-boost-anything.html /posts/with-pytorch-i-can-gradient-boost-anything.html
+      redir /posts/with-pytorch-i-can-gradient-boost-anything* /posts/with-pytorch-i-can-gradient-boost-anything.html permanent
+      redir /blog/with-pytorch-i-can-gradient-boost-anything* /posts/with-pytorch-i-can-gradient-boost-anything.html permanent
+      redir /with-pytorch-i-can-gradient-boost-anything* /posts/with-pytorch-i-can-gradient-boost-anything.html permanent
+      redir /with-pytorch-i-can-gradient-boost-anything.html /posts/with-pytorch-i-can-gradient-boost-anything.html permanent
 
-      redir /posts/winning-with-simple-not-even-linear-time-series-models/ /posts/winning-with-simple-not-even-linear-time-series-models.html
-      redir /winning-with-simple-not-even-linear-time-series-models/ /posts/winning-with-simple-not-even-linear-time-series-models.html
-      redir /winning-with-simple-not-even-linear-time-series-models.html /posts/winning-with-simple-not-even-linear-time-series-models.html
+      redir /posts/winning-with-simple-not-even-linear-time-series-models* /posts/winning-with-simple-not-even-linear-time-series-models.html permanent
+      redir /blog/winning-with-simple-not-even-linear-time-series-models* /posts/winning-with-simple-not-even-linear-time-series-models.html permanent
+      redir /winning-with-simple-not-even-linear-time-series-models* /posts/winning-with-simple-not-even-linear-time-series-models.html permanent
+      redir /winning-with-simple-not-even-linear-time-series-models.html /posts/winning-with-simple-not-even-linear-time-series-models.html permanent
 
-      redir /posts/varying-coefficient-garch/ /posts/varying-coefficient-garch.html
-      redir /varying-coefficient-garch/ /posts/varying-coefficient-garch.html
-      redir /varying-coefficient-garch.html /posts/varying-coefficient-garch.html
+      redir /posts/varying-coefficient-garch* /posts/varying-coefficient-garch.html permanent
+      redir /blog/varying-coefficient-garch* /posts/varying-coefficient-garch.html permanent
+      redir /varying-coefficient-garch* /posts/varying-coefficient-garch.html permanent
+      redir /varying-coefficient-garch.html /posts/varying-coefficient-garch.html permanent
 
-      redir /posts/when-point-forecasts-are-completely-useless/ /posts/when-point-forecasts-are-completely-useless.html
-      redir /when-point-forecasts-are-completely-useless/ /posts/when-point-forecasts-are-completely-useless.html
-      redir /when-point-forecasts-are-completely-useless.html /posts/when-point-forecasts-are-completely-useless.html
+      redir /posts/when-point-forecasts-are-completely-useless* /posts/when-point-forecasts-are-completely-useless.html permanent
+      redir /blog/when-point-forecasts-are-completely-useless* /posts/when-point-forecasts-are-completely-useless.html permanent
+      redir /when-point-forecasts-are-completely-useless* /posts/when-point-forecasts-are-completely-useless.html permanent
+      redir /when-point-forecasts-are-completely-useless.html /posts/when-point-forecasts-are-completely-useless.html permanent
 
-      redir /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities/ /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html
-      redir /why-i-prefer-probabilistic-forecasts-hitting-time-probabilities/ /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html
-      redir /why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html
+      redir /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities* /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html permanent
+      redir /blog/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities* /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html permanent
+      redir /why-i-prefer-probabilistic-forecasts-hitting-time-probabilities* /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html permanent
+      redir /why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html /posts/why-i-prefer-probabilistic-forecasts-hitting-time-probabilities.html permanent
 
-      redir /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts/ /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html
-      redir /random-forests-and-boosting-for-arch-like-volatility-forecasts/ /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html
-      redir /random-forests-and-boosting-for-arch-like-volatility-forecasts.html /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html
+      redir /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts* /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html permanent
+      redir /blog/random-forests-and-boosting-for-arch-like-volatility-forecasts* /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html permanent
+      redir /random-forests-and-boosting-for-arch-like-volatility-forecasts* /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html permanent
+      redir /random-forests-and-boosting-for-arch-like-volatility-forecasts.html /posts/random-forests-and-boosting-for-arch-like-volatility-forecasts.html permanent
 
-      redir /posts/forecasting-with-decision-trees-and-random-forests/ /posts/forecasting-with-decision-trees-and-random-forests.html
-      redir /forecasting-with-decision-trees-and-random-forests/ /posts/forecasting-with-decision-trees-and-random-forests.html
-      redir /forecasting-with-decision-trees-and-random-forests.html /posts/forecasting-with-decision-trees-and-random-forests.html
+      redir /posts/forecasting-with-decision-trees-and-random-forests* /posts/forecasting-with-decision-trees-and-random-forests.html permanent
+      redir /blog/forecasting-with-decision-trees-and-random-forests* /posts/forecasting-with-decision-trees-and-random-forests.html permanent
+      redir /forecasting-with-decision-trees-and-random-forests* /posts/forecasting-with-decision-trees-and-random-forests.html permanent
+      redir /forecasting-with-decision-trees-and-random-forests.html /posts/forecasting-with-decision-trees-and-random-forests.html permanent
 
-      redir /posts/multivariate-garch-with-python-and-tensorflow/ /posts/multivariate-garch-with-python-and-tensorflow.html
-      redir /multivariate-garch-with-python-and-tensorflow/ /posts/multivariate-garch-with-python-and-tensorflow.html
-      redir /multivariate-garch-with-python-and-tensorflow.html /posts/multivariate-garch-with-python-and-tensorflow.html
+      redir /posts/multivariate-garch-with-python-and-tensorflow* /posts/multivariate-garch-with-python-and-tensorflow.html permanent
+      redir /blog/multivariate-garch-with-python-and-tensorflow* /posts/multivariate-garch-with-python-and-tensorflow.html permanent
+      redir /multivariate-garch-with-python-and-tensorflow* /posts/multivariate-garch-with-python-and-tensorflow.html permanent
+      redir /multivariate-garch-with-python-and-tensorflow.html /posts/multivariate-garch-with-python-and-tensorflow.html permanent
 
-      redir /posts/cointegrated-time-series-and-when-differencing-might-be-bad/ /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html
-      redir /cointegrated-time-series-and-when-differencing-might-be-bad/ /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html
-      redir /cointegrated-time-series-and-when-differencing-might-be-bad.html /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html
+      redir /posts/cointegrated-time-series-and-when-differencing-might-be-bad* /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html permanent
+      redir /blog/cointegrated-time-series-and-when-differencing-might-be-bad* /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html permanent
+      redir /cointegrated-time-series-and-when-differencing-might-be-bad* /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html permanent
+      redir /cointegrated-time-series-and-when-differencing-might-be-bad.html /posts/cointegrated-time-series-and-when-differencing-might-be-bad.html permanent
 
-      redir /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet/ /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html
-      redir /facebook-prophet-covid-and-why-i-dont-trust-the-prophet/ /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html
-      redir /facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html
+      redir /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet* /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html permanent
+      redir /blog/facebook-prophet-covid-and-why-i-dont-trust-the-prophet* /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html permanent
+      redir /facebook-prophet-covid-and-why-i-dont-trust-the-prophet* /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html permanent
+      redir /facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html /posts/facebook-prophet-covid-and-why-i-dont-trust-the-prophet.html permanent
 
-      redir /posts/probabilistic-cusum-for-change-point-detection/ /posts/probabilistic-cusum-for-change-point-detection.html
-      redir /probabilistic-cusum-for-change-point-detection/ /posts/probabilistic-cusum-for-change-point-detection.html
-      redir /probabilistic-cusum-for-change-point-detection.html /posts/probabilistic-cusum-for-change-point-detection.html
+      redir /posts/probabilistic-cusum-for-change-point-detection* /posts/probabilistic-cusum-for-change-point-detection.html permanent
+      redir /blog/probabilistic-cusum-for-change-point-detection* /posts/probabilistic-cusum-for-change-point-detection.html permanent
+      redir /probabilistic-cusum-for-change-point-detection* /posts/probabilistic-cusum-for-change-point-detection.html permanent
+      redir /probabilistic-cusum-for-change-point-detection.html /posts/probabilistic-cusum-for-change-point-detection.html permanent
 
-      redir /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula/ /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html
-      redir /multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula/ /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html
-      redir /multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html
+      redir /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula* /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html permanent
+      redir /blog/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula* /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html permanent
+      redir /multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula* /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html permanent
+      redir /multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html /posts/multivariate-probabilistic-time-series-forecasting-with-lstm-and-gaussian-copula.html permanent
 
-      redir /posts/lets-make-garch-more-flexible-with-normalizing-flows/ /posts/lets-make-garch-more-flexible-with-normalizing-flows.html
-      redir /lets-make-garch-more-flexible-with-normalizing-flows/ /posts/lets-make-garch-more-flexible-with-normalizing-flows.html
-      redir /lets-make-garch-more-flexible-with-normalizing-flows.html /posts/lets-make-garch-more-flexible-with-normalizing-flows.html
+      redir /posts/lets-make-garch-more-flexible-with-normalizing-flows* /posts/lets-make-garch-more-flexible-with-normalizing-flows.html permanent
+      redir /blog/lets-make-garch-more-flexible-with-normalizing-flows* /posts/lets-make-garch-more-flexible-with-normalizing-flows.html permanent
+      redir /lets-make-garch-more-flexible-with-normalizing-flows* /posts/lets-make-garch-more-flexible-with-normalizing-flows.html permanent
+      redir /lets-make-garch-more-flexible-with-normalizing-flows.html /posts/lets-make-garch-more-flexible-with-normalizing-flows.html permanent
 
-      redir /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas/ /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html
-      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas/ /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html
-      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html
+      redir /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas* /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
+      redir /blog/arma-forecasting-for-non-gaussian-time-series-data-using-copulas* /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
+      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas* /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
+      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
 
-      redir /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas/ /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html
-      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas/ /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html
-      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html
+      redir /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas* /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
+      redir /blog/arma-forecasting-for-non-gaussian-time-series-data-using-copulas* /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
+      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas* /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
+      redir /arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html /posts/arma-forecasting-for-non-gaussian-time-series-data-using-copulas.html permanent
 
-      redir /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven/ /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html
-      redir /bayesian-machine-learning-and-julia-are-a-match-made-in-heaven/ /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html
-      redir /bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html
+      redir /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven* /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html permanent
+      redir /blog/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven* /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html permanent
+      redir /bayesian-machine-learning-and-julia-are-a-match-made-in-heaven* /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html permanent
+      redir /bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html /posts/bayesian-machine-learning-and-julia-are-a-match-made-in-heaven.html permanent
 
-      redir /posts/when-is-bayesian-machine-learning-actually-useful/ /posts/when-is-bayesian-machine-learning-actually-useful.html
-      redir /when-is-bayesian-machine-learning-actually-useful/ /posts/when-is-bayesian-machine-learning-actually-useful.html
-      redir /when-is-bayesian-machine-learning-actually-useful.html /posts/when-is-bayesian-machine-learning-actually-useful.html
+      redir /posts/when-is-bayesian-machine-learning-actually-useful* /posts/when-is-bayesian-machine-learning-actually-useful.html permanent
+      redir /blog/when-is-bayesian-machine-learning-actually-useful* /posts/when-is-bayesian-machine-learning-actually-useful.html permanent
+      redir /when-is-bayesian-machine-learning-actually-useful* /posts/when-is-bayesian-machine-learning-actually-useful.html permanent
+      redir /when-is-bayesian-machine-learning-actually-useful.html /posts/when-is-bayesian-machine-learning-actually-useful.html permanent
 
-      redir /posts/a-gaussian-process-model-for-heteroscedasticity/ /posts/a-gaussian-process-model-for-heteroscedasticity.html
-      redir /a-gaussian-process-model-for-heteroscedasticity/ /posts/a-gaussian-process-model-for-heteroscedasticity.html
-      redir /a-gaussian-process-model-for-heteroscedasticity.html /posts/a-gaussian-process-model-for-heteroscedasticity.html
+      redir /posts/a-gaussian-process-model-for-heteroscedasticity* /posts/a-gaussian-process-model-for-heteroscedasticity.html permanent
+      redir /blog/a-gaussian-process-model-for-heteroscedasticity* /posts/a-gaussian-process-model-for-heteroscedasticity.html permanent
+      redir /a-gaussian-process-model-for-heteroscedasticity* /posts/a-gaussian-process-model-for-heteroscedasticity.html permanent
+      redir /a-gaussian-process-model-for-heteroscedasticity.html /posts/a-gaussian-process-model-for-heteroscedasticity.html permanent
     }
 
     

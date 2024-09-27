@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarto-deployment
+spec:
+  replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: quarto-deployment
+  template:
+    metadata:
+      labels:
+        app: quarto-deployment
+    spec:
+      serviceAccountName: job-trigger-sa
+      containers:
+        - name: caddy
+          image: caddy:2.8.4-alpine
+          ports:
+          - containerPort: 80
+            name: http-port
+          - containerPort: 443
+            name: https-port
+          volumeMounts:
+          - mountPath: /quarto
+            name: quarto-static
+            readOnly: true
+          - mountPath: /data/caddy
+            name: caddy-data
+            readOnly: false
+          - mountPath: /etc/caddy/Caddyfile
+            name: caddyfile
+            subPath: Caddyfile
+          securityContext:                  
+            allowPrivilegeEscalation: false        
+        - name: git-sync-sidecar
+          securityContext:
+            runAsUser: 0
+          image: {{ .Values.gitSync.image }}
+          volumeMounts:
+            - name: quarto-static
+              mountPath: /quarto
+              readOnly: false
+          env:
+            - name: GITSYNC_REPO
+              value: "https://github.com/{{ .Values.gitSync.repoUsername }}/{{ .Values.gitSync.repoName }}" 
+            - name: GITSYNC_BRANCH
+              value: "{{ .Values.gitSync.targetBranch }}" 
+            - name: GITSYNC_ROOT
+              value: "/quarto"
+            - name: GITSYNC_PERIOD
+              value: "{{ .Values.gitSync.syncPeriod }}"
+            - name: GITSYNC_GROUP_WRITE
+              value: "true"
+            - name: GITSYNC_EXECHOOK_COMMAND
+              value: "/quarto-render-job"
+      volumes:
+      - name: quarto-static
+        persistentVolumeClaim:
+          claimName: blog-pvc
+      - name: caddy-data
+        persistentVolumeClaim:
+          claimName: caddy-pvc
+      - name: caddyfile
+        configMap:
+          name: caddyfile

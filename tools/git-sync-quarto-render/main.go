@@ -27,7 +27,15 @@ func main() {
 	gitsync_hash := os.Getenv("GITSYNC_HASH")
 
 	jobName := fmt.Sprintf("quarto-render-%s", gitsync_hash)
-	namespace := "blog"
+
+	job_namespace := os.Getenv("JOB_NAMESPACE")
+	namespace := job_namespace
+
+	job_container_image := os.Getenv("JOB_CONTAINER_IMAGE")
+
+	job_command := os.Getenv("JOB_COMMAND")
+	command := []string{"sh", "-c"}
+	command = append(command, job_command)
 
 	ttlSecondsAfterFinished := int32(900)
 	runAsZero := int64(0)
@@ -46,11 +54,9 @@ func main() {
 					},
 					Containers: []v1core.Container{
 						{
-							Name:  "quarto-render",
-							Image: "registry.gitlab.com/quarto-forge/docker/quarto",
-							Command: []string{
-								"sh", "-c", "rm -rf /quarto/blog/docs && quarto render /quarto/blog && rm -rf /quarto/output && cp -rf /quarto/blog/docs /quarto/output",
-							},
+							Name:    "quarto-render",
+							Image:   job_container_image,
+							Command: command,
 							VolumeMounts: []v1core.VolumeMount{
 								{
 									Name:      "quarto",

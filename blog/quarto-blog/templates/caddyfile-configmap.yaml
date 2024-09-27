@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: caddyfile 
+data:
+  Caddyfile: |
+    {{- if Values.server.redirectFromWww }}
+    www.{{ .Values.server.domainUrl }} {
+    	redir https://{{ .Values.server.domainUrl }}{uri} permanent
+    }
+    {{- end }}
+
+    {{ .Values.server.domainUrl | nindent 4 }} {
+      root * /quarto/output
+      file_server
+      
+      {{ .Values.server.caddyFileAdditions | nindent 6 }}
+    }
+
+    
