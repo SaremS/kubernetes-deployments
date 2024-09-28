@@ -15,17 +15,14 @@ spec:
     spec:
       serviceAccountName: job-trigger-sa
       containers:
-        - name: caddy
-          image: caddy:2.8.4-alpine
+        - name: blog
+          image: ghcr.io/sarems/blog:2024-09-28-15-19
           ports:
           - containerPort: 80
             name: http-port
           - containerPort: 443
             name: https-port
           volumeMounts:
-          - mountPath: /quarto
-            name: quarto-static
-            readOnly: true
           - mountPath: /data/caddy
             name: caddy-data
             readOnly: false
