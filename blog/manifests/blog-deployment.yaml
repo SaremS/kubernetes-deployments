@@ -31,31 +31,7 @@ spec:
             subPath: Caddyfile
           securityContext:                  
             allowPrivilegeEscalation: false        
-        - name: git-sync-sidecar
-          securityContext:
-            runAsUser: 0
-          image: ghcr.io/sarems/kubernetes-deployments/git-sync-quarto-render:v0.0.7
-          volumeMounts:
-            - name: quarto-static
-              mountPath: /quarto
-              readOnly: false
-          env:
-            - name: GITSYNC_REPO
-              value: "https://github.com/SaremS/blog" 
-            - name: GITSYNC_BRANCH
-              value: "master" 
-            - name: GITSYNC_ROOT
-              value: "/quarto"
-            - name: GITSYNC_PERIOD
-              value: "60s"
-            - name: GITSYNC_GROUP_WRITE
-              value: "true"
-            - name: GITSYNC_EXECHOOK_COMMAND
-              value: "/quarto-render-job"
       volumes:
-      - name: quarto-static
-        persistentVolumeClaim:
-          claimName: blog-pvc
       - name: caddy-data
         persistentVolumeClaim:
           claimName: caddy-pvc
