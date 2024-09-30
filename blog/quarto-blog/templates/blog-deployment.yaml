@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: caddy
-          image: {{ .Value.image.name }}:{{ .Values.image.tag }}
+          image: {{ .Values.image.name }}:{{ .Values.image.tag }}
           ports:
           - containerPort: 80
             name: http-port
