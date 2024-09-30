@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: blog-helm
+  namespace: argocd  
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/SaremS/kubernetes-deployments
+    targetRevision: master 
+    path: blog/quarto-blog 
+  destination:
+    server: 'https://kubernetes.default.svc' 
+    namespace: blog-helm
+  syncPolicy:
+    automated:  
+      selfHeal: true  
+    syncOptions:
+      - ServerSideApply=true
+      - CreateNamespace=true
