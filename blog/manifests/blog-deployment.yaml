@@ -16,7 +16,7 @@ spec:
       serviceAccountName: job-trigger-sa
       containers:
         - name: blog
-          image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+          image: ghcr.io/sarems/blog:2024-09-28-15-19 
           ports:
           - containerPort: 80
             name: http-port
