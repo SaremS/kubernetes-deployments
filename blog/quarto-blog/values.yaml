@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   name: ghcr.io/sarems/blog
-  tag: 2024-09-28-15-19
+  tag: 2024-09-30-16-41
 
 persistence:
   storageClassName: null
