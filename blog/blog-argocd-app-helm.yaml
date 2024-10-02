@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: blog-helm
   namespace: argocd  
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: blog=ghcr.io/sarems/blog 
+    argocd-image-updater.argoproj.io/blog.update-strategy: alphabetical
 spec:
   project: default
   source:
