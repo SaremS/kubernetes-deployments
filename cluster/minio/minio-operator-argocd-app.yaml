@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://operator.min.io'
+    targetRevision: v6.0.3
+    chart: operator
+    helm:
+      
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: minio-operator
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
