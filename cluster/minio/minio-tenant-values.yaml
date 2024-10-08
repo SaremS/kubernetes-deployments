@@ -1,3 +1,3 @@
 tenant:
   pools:
-    - servers: 4
+    - servers: 2
