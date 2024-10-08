@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minio-operator
+  name: minio-tenant
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://operator.min.io'
     targetRevision: v6.0.3
-    chart: operator
+    chart: tenant
     helm:
        valueFiles:
-        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/minio/minio-operator-values.yaml  
+        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/minio/minio-tenant-values.yaml  
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: minio-operator
+    namespace: minio-tenant
   syncPolicy:
     automated:
       selfHeal: true
