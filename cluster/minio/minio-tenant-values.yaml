@@ -1,3 +1,93 @@
 tenant:
+  name: myminio
+  image:
+    repository: quay.io/minio/minio
+    tag: RELEASE.2024-10-02T17-50-41Z
+    pullPolicy: IfNotPresent
+  imagePullSecret: { }
+  scheduler: { }
+  configuration:
+    name: myminio-env-configuration
+  configSecret:
+    name: myminio-env-configuration
+    accessKey: minio
+    secretKey: minio123
   pools:
     - servers: 2
+      name: pool-0
+      volumesPerServer: 3
+      size: 10Gi
+      storageAnnotations: { }
+      annotations: { }
+      labels: { }
+      tolerations: [ ]
+      nodeSelector: { }
+      affinity: { }
+      resources: { }
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: "OnRootMismatch"
+        runAsNonRoot: true
+      containerSecurityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        seccompProfile:
+          type: RuntimeDefault
+      topologySpreadConstraints: [ ]
+  mountPath: /export
+  subPath: /data
+  metrics:
+    enabled: false
+    port: 9000
+    protocol: http
+  certificate:
+    externalCaCertSecret: [ ]
+    externalCertSecret: [ ]
+    requestAutoCert: true
+    certConfig: { }
+  features:
+    bucketDNS: false
+    domains: { }
+    enableSFTP: false
+  buckets: [ ]
+  users: [ ]
+  podManagementPolicy: Parallel
+  liveness: { }
+  readiness: { }
+  startup: { }
+  lifecycle: { }
+  exposeServices: { }
+  serviceAccountName: ""
+  prometheusOperator: false
+  logging: { }
+  serviceMetadata: { }
+  env: [ ]
+  priorityClassName: ""
+  additionalVolumes: [ ]
+  additionalVolumeMounts: [ ]
+ingress:
+  api:
+    enabled: false
+    ingressClassName: ""
+    labels: { }
+    annotations: { }
+    tls: [ ]
+    host: minio.local
+    path: /
+    pathType: Prefix
+  console:
+    enabled: false
+    ingressClassName: ""
+    labels: { }
+    annotations: { }
+    tls: [ ]
+    host: minio-console.local
+    path: /
+    pathType: Prefix
