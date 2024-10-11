@@ -6,9 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/strimzi/strimzi-kafka-operator'
-    path: cluster/kafka/kafka-cluster.yaml
+    repoURL: 'https://github.com/SaremS/kubernetes-deployments'
+    path: cluster/kafka
     targetRevision: master
+    directory:
+        include: kafka-cluster.yaml 
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kafka
