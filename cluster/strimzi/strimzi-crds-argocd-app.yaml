@@ -1,24 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: strimzi
+  name: strimzi-crds
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/strimzi/strimzi-kafka-operator'
-    path: helm-charts/helm3/strimzi-kafka-operator
+    path: helm-charts/helm3/strimzi-kafka-operator/crds
     targetRevision: 0.43.0
-    helm:
-       skipCrds: true
-       valueFiles:
-        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/strimzi/strimzi-values.yaml  
+    directory:
+      recurse: true
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: strimzi
   syncPolicy:
-    automated:
-      selfHeal: true
     syncOptions:
       - Validate=false
       - CreateNamespace=true
+      - Replace=true
