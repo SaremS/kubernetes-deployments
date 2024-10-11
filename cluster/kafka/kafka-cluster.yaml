@@ -4,6 +4,12 @@ metadata:
   name: my-cluster
 spec:
   kafka:
+    template:
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
     version: 3.8.0
     replicas: 2
     listeners:
@@ -31,6 +37,12 @@ spec:
         deleteClaim: false
   zookeeper:
     replicas: 1
+    template:
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
     storage:
       type: persistent-claim
       size: 20Gi

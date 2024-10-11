@@ -13,10 +13,14 @@ spec:
         include: kafka-cluster.yaml 
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: kafka
+    namespace: strimzi
   syncPolicy:
     automated:
       selfHeal: true
     syncOptions:
       - Validate=false
       - CreateNamespace=true
+  orphanedResources:
+    ignore:
+      - group: ""
+        kind: PersistentVolumeClaim
