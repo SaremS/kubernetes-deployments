@@ -20,4 +20,3 @@ spec:
     syncOptions:
       - Validate=false
       - CreateNamespace=true
-      - Replace=true
