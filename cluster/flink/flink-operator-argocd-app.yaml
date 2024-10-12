@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flink-kubernetes-operator
+spec:
+  source:
+    repoURL: https://github.com/apache/flink-kubernetes-operator
+    targetRevision: release-1.9.0
+    path: helm/flink-kubernetes-operator
+    helm:
+       valueFiles:
+        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/flink/flink-operator-values.yaml  
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: flink
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
