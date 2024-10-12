@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: flink-kubernetes-operator
 spec:
+  project: default
   source:
     repoURL: https://github.com/apache/flink-kubernetes-operator
     targetRevision: release-1.9.0
