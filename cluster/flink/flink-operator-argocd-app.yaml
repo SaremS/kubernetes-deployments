@@ -10,14 +10,13 @@ spec:
     targetRevision: release-1.9.0
     path: helm/flink-kubernetes-operator
     helm:
-       valueFiles:
-        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/flink/flink-operator-values.yaml  
+      values: |
+        image:
+          repository: apache/flink-kubernetes-operator
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: flink
   syncPolicy:
-    automated:
-      selfHeal: true
     syncOptions:
       - Validate=false
       - CreateNamespace=true
