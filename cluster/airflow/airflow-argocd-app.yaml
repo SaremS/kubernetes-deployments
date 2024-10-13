@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://airflow.apache.org'
-    path: airflow
+    chart: airflow
     targetRevision: 1.15.0
     helm:
        skipCrds: true
