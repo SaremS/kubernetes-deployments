@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: airflow
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://airflow.apache.org'
+    path: airflow
+    targetRevision: 1.15.0
+    helm:
+       skipCrds: true
+       valueFiles:
+        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/airflow/airflow-values.yaml  
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: airflow
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
