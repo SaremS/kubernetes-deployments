@@ -4,3 +4,16 @@ createUserJob:
 migrateDatabaseJob:
   useHelmHooks: false
   applyCustomEnv: false
+
+executor: "KubernetesExecutor"
+
+workers:
+  persistence:
+    size: 10Gi
+triggerer:
+  persistence:
+    size: 10Gi
+logs:
+  persistence:
+    enabled: true
+    size: 10Gi
