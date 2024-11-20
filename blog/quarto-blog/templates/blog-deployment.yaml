@@ -13,6 +13,19 @@ spec:
       labels:
         app: quarto-deployment
     spec:
+      tolerations:
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
+          effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - "vmd138897"
       containers:
         - name: caddy
           image: {{ .Values.image.name }}:{{ .Values.image.tag }}
