@@ -21,13 +21,5 @@ spec:
             name: http-port
           - containerPort: 443
             name: https-port
-          volumeMounts:
-          - mountPath: /data/caddy
-            name: caddy-data
-            readOnly: false
           securityContext:                  
             allowPrivilegeEscalation: false        
-      volumes:
-      - name: caddy-data
-        persistentVolumeClaim:
-          claimName: caddy-pvc

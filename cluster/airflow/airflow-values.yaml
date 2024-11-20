@@ -17,3 +17,7 @@ logs:
   persistence:
     enabled: true
     size: 10Gi
+
+dags:
+  git-sync:
+    enabled: true
