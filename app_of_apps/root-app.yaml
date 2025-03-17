@@ -14,9 +14,7 @@ spec:
     path: app_of_apps/apps
   syncPolicy:
     syncOptions:
-      - Validate=false
       - CreateNamespace=true
-      - Replace=true
     automated:
       prune: true
       selfHeal: true
