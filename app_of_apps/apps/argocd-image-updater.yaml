@@ -6,8 +6,6 @@ metadata:
 spec:
   project: default
   source:
-    directory:
-      recurse: false
     repoURL: https://github.com/argoproj-labs/argocd-image-updater
     path: manifests/base
     targetRevision: release-0.14
