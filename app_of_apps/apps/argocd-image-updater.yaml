@@ -9,8 +9,6 @@ spec:
     repoURL: https://github.com/argoproj-labs/argocd-image-updater
     path: manifests/base
     targetRevision: release-0.14
-    directory:
-      recurse: false
   destination:
     server: https://kubernetes.default.svc  
     namespace: argocd   
