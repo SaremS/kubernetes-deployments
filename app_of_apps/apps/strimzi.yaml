@@ -22,4 +22,3 @@ spec:
       selfHeal: true
     syncOptions:
       - Validate=false
-      - CreateNamespace=true
