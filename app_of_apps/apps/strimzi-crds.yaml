@@ -16,6 +16,4 @@ spec:
     namespace: strimzi
   syncPolicy:
     syncOptions:
-      - Validate=false
       - CreateNamespace=true
-      - Replace=true
