@@ -10,7 +10,7 @@ spec:
       chart: metallb             
       targetRevision: 0.14.8
     - repoURL: https://github.com/SaremS/kubernetes-deployments
-      path: cluster
+      path: cluster/metallb
       targetRevision: master
       directory:
         recurse: false 

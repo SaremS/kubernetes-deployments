@@ -12,6 +12,8 @@ spec:
     repoURL: 'https://github.com/SaremS/kubernetes-deployments'
     targetRevision: master
     path: app_of_apps/apps
+    directory:
+      recurse: true
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
