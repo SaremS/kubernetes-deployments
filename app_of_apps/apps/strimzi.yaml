@@ -12,12 +12,13 @@ spec:
     helm:
        skipCrds: true
        valueFiles:
-        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/strimzi/strimzi-values.yaml  
+        - https://raw.githubusercontent.com/SaremS/kubernetes-deployments/refs/heads/master/cluster/strimzi-values.yaml  
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: strimzi
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true
     syncOptions:
       - Validate=false
