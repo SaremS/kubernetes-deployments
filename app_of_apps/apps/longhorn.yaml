@@ -9,7 +9,7 @@ spec:
     repoURL: 'https://charts.longhorn.io'
     targetRevision: v1.7.1
     chart: longhorn
-    helm:
+   helm:
       values: |
         preUpgradeChecker:
           jobEnabled: false
@@ -22,6 +22,7 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
+      prune: true
     syncOptions:
-      - Validate=false
+      - ServerSideApply=true
       - CreateNamespace=true
