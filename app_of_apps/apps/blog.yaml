@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: blog-helm
+  name: blog
   namespace: argocd  
   annotations:
     argocd-image-updater.argoproj.io/image-list: blog=ghcr.io/sarems/blog 
