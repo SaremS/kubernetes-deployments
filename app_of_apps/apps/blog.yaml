@@ -17,7 +17,7 @@ spec:
       targetRevision: master
       directory:
         recurse: false
-        include: 'frontend-policy-asdf.yaml'
+        include: 'frontend-policy.yaml'
   destination:
     server: 'https://kubernetes.default.svc' 
     namespace: blog-helm
