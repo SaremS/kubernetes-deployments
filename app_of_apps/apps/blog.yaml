@@ -8,10 +8,16 @@ metadata:
     argocd-image-updater.argoproj.io/blog.update-strategy: alphabetical
 spec:
   project: default
-  source:
-    repoURL: https://github.com/SaremS/kubernetes-deployments
-    targetRevision: master 
-    path: blog/quarto-blog 
+  sources:
+    - repoURL: https://github.com/SaremS/kubernetes-deployments
+      targetRevision: master 
+      path: blog/quarto-blog 
+    - repoURL: https://github.com/SaremS/kubernetes-deployments
+      path: cluster/network_policies
+      targetRevision: master
+      directory:
+        recurse: false
+        include: 'deny-egress-policy.yaml'
   destination:
     server: 'https://kubernetes.default.svc' 
     namespace: blog-helm
