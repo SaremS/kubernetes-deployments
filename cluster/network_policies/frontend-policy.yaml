@@ -34,4 +34,5 @@ spec:
               - matchPattern: "*"    
     - toFQDNs:
         - matchName: "letsencrypt.org"
+        - matchName: "acme-staging-v02.api.letsencrypt.org"
         - matchPattern: "*.letsencrypt.org"
