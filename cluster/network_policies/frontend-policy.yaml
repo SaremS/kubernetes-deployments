@@ -35,12 +35,6 @@ spec:
     - toFQDNs:
         - matchName: "letsencrypt.org"
         - matchPattern: "*.letsencrypt.org"
-      toPorts:
-        - ports:
-            - port: "443"
-              protocol: TCP
-            - port: "80"
-              protocol: TCP
     - toEntities:
         - world
       toPorts:
