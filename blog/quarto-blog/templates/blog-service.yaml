@@ -5,7 +5,11 @@ metadata:
 spec:
   selector:
     app: quarto-deployment
-  ports: {{ .Values.service.ports }}
+  ports:
+    {{- toYaml .Values.service.ports | nindent 4 }}
   type: {{ .Values.service.type }}
+  
+  {{- if .Values.service.ipAddress }}
   loadBalancerIP: {{ .Values.service.ipAddress }}
+  {{- end }}
 
