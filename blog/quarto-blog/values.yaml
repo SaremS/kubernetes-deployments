@@ -13,3 +13,4 @@ affinity: []
 service:
   ports: []
   type: "ClusterIP"
+  loadBalancerIp: ~
