@@ -7,6 +7,9 @@ image:
 persistence:
   storageClassName: null
 
+tolerations: []
+affinity: []
+
 loadBalancer:
   http:
     port: 80
