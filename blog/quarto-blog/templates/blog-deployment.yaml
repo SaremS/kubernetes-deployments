@@ -13,8 +13,15 @@ spec:
       labels:
         app: quarto-deployment
     spec:
-      tolerations: {{ .Values.tolerations }}
-      affinity: {{ .Values.affinity }}
+      {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+      {{- end }}
+
+      {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+      {{- end }}
       containers:
         - name: caddy
           image: {{ .Values.image.name }}:{{ .Values.image.tag }}
